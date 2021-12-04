@@ -13,3 +13,11 @@ epsilon = day03.bin2dec(rates[1])
 print("The rates (in decimal) are gamma: {}; and epsilon: {}".format(gamma, epsilon))
 
 print("Power consumption is {} * {} = {}". format(gamma, epsilon, gamma * epsilon))
+
+print("Part 2 answers:")
+
+oxygen_rating = day03.bin2dec(day03.find_o2_rating(report).flatten())
+co2_scrubber_rating = day03.bin2dec(day03.find_co2_rating(report).flatten())
+life_support_rating = oxygen_rating * co2_scrubber_rating
+
+print("Life Support Rating is {} * {} = {}".format(oxygen_rating, co2_scrubber_rating, life_support_rating))
