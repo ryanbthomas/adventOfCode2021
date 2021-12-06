@@ -1,6 +1,6 @@
 import math
 
-class LineSegment:
+class lineSegment:
     def __init__(self, start, end):
 
         rise = end[1] - start[1]
@@ -10,7 +10,7 @@ class LineSegment:
             slope = rise / run
 
         self.isDiag = slope == None or slope == 0 
-        self.points = LineSegment.find_all_points(start, end) 
+        self.points = lineSegment.find_all_points(start, end) 
     
     def find_all_points(start, end):
 
@@ -27,7 +27,7 @@ class LineSegment:
         
         step = int(run / math.gcd(rise, run))
 
-        return [(x, int(rise/run * (x - start[0]) + start[1])) for x in range(start[0], end[0] + 1, step)]
+        return [(x, int(rise/run * (x - start[0]) + start[1])) for x in range(start[0], end[0] + run_step, step)]
 
     def __str__(self):
         out = str(self.points[0])
@@ -36,4 +36,10 @@ class LineSegment:
         return out
     
     def __repr__(self):
-        return "LineSegment: " + str(self) 
+        return "LineSegment: {} -> {}".format(self.points[0],self.points[-1])
+
+if __name__ == "__main__":
+
+    test = lineSegment((8,0), (0, 8))
+    print(type(test))
+    print(test) 
