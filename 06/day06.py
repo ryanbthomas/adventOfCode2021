@@ -19,7 +19,6 @@ def orig_run_experiment(school, days = 10):
     
 def run_experiment(school_init, days = 10):
 
-    #print("Initial State: {}".format(school))
     nursery = [0 for x in range(9)]
     school = [school_init.count(x) for x in range(7)]
 
@@ -27,22 +26,10 @@ def run_experiment(school_init, days = 10):
         new_fish_from_school = school[0]
         school = school[1:]
         school.extend([new_fish_from_school])
-        #school = list(map(lambda x: (x - 1) % 7, school))
         new_kids_from_nursery = nursery[0]
         nursery = nursery[1:]
         nursery.extend([new_fish_from_school + new_kids_from_nursery])
         school[-1] += new_kids_from_nursery
-        #new_adults_from_nursery = nursery.count(0)
-        #new_kids_from_school = school.count(6)
-        #if new_adults_from_nursery > 0:
-        #    school.extend([6 for x in range(new_adults_from_nursery)])
-        #    for j in range(new_adults_from_nursery):
-        #        nursery.remove(0)
-
-        #nursery = list(map(lambda x: (x - 1) % 9, nursery))
-        #if new_adults_from_nursery + new_kids_from_school > 0:
-        #    nursery.extend([8 for x in range(new_adults_from_nursery + new_kids_from_school)])
-        #print("After {} days: {}".format(i + 1, school + nursery))    
     return sum(school) + sum(nursery)
 
 if __name__ == "__main__":
