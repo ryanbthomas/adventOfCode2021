@@ -1,6 +1,6 @@
 import math
 
-class lineSegment:
+class LineSegment:
     def __init__(self, start, end):
 
         rise = end[1] - start[1]
@@ -10,7 +10,7 @@ class lineSegment:
             slope = rise / run
 
         self.isDiag = slope == None or slope == 0 
-        self.points = lineSegment.find_all_points(start, end) 
+        self.points = LineSegment.find_all_points(start, end) 
     
     def find_all_points(start, end):
 
@@ -34,3 +34,6 @@ class lineSegment:
         for pt in self.points[1:]:
             out += "--{}".format(pt)
         return out
+    
+    def __repr__(self):
+        return "LineSegment: " + str(self) 
