@@ -19,3 +19,7 @@ def sum_version_num(p):
 sum_of_version_nums = sum_version_num(parsed_packets)
 
 print("Part 1:\nSum of version numbers: {}".format(sum_of_version_nums))
+
+packet_value = day16.eval_bits(parsed_packets)
+
+print("Part2:\n packet value is {}".format(packet_value))
